@@ -26,6 +26,7 @@ public class EmployeeController {
 	public void setEmployeeDao(EmployeeDao employeeDao) {
 		System.out.println("Employee dao has been set" + employeeDao);
 		this.employeeDao = employeeDao;
+		//System.out.println("Employee dao has been set" + this.employeeDao);
 	}
 
 	public EmployeeDao getEmployeeDao() {
@@ -36,6 +37,7 @@ public class EmployeeController {
 	public String showAddPage(){
 		System.out.println("hit!!");
 		return "redirect:/EmpData.html";
+		//return new ModelAndView("EmpData");
 	}
 	
 	@RequestMapping(value = "/getEmpName.html", method = RequestMethod.GET)
@@ -47,5 +49,6 @@ public class EmployeeController {
 		return objectMapper.writeValueAsString(lEmployee);
 		
 	}
+	
 	
 }
