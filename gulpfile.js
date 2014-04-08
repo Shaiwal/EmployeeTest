@@ -15,7 +15,7 @@ gulp.task('lint', function() {
         .pipe(jshint.reporter('default'));
 });
 
-// Compile Our Sass
+// minify and concat our css files
 
 gulp.task('css', function() {
     return gulp.src('WebContent/css/*.css')
@@ -24,21 +24,6 @@ gulp.task('css', function() {
         .pipe(gulp.dest('WebContent/css'));
 });
 
-
-// Concatenate & Minify JS
-/*gulp.task('scripts', function() {
-    return gulp.src('WebContent/js/*.js')
-        .pipe(concat('all.js'))
-        .pipe(gulp.dest('dist'))
-        .pipe(uglify())
-        .pipe(gulp.dest('dist'));
-});*/
-
-// Watch Files For Changes
-/*gulp.task('watch', function() {
-    gulp.watch('WebContent/js/*.js', ['lint', 'css']);
-  //  gulp.watch('scss/*.scss', ['sass']);
-});*/
 
 // Default Task
 gulp.task('default', ['lint', 'css']);
