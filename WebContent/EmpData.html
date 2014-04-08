@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html ng-app="EmpProject">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<!-- <script type="text/javascript" src="js/jquery-1.11.0.js"></script>
+ -->
+<script src="js/angular.min.js"></script>
+<script src="js/empUtil.js"></script>
+</head>
+<body>
+	<h3>Employee Sample Page</h3>
+	<div ng-controller="EmpCtrl">
+	
+	<!-- 	<form> -->
+			<input type="text" ng-model="empIdText" id="empId"
+				placeholder="Enter employee id here" /> <button ng-click="getDatafrmServer()" id="getDataBtn">Get Employee</button>
+				
+		<!-- </form> -->
+		<div ng-if="loadingIsDone">
+			<h4>{{content}}</h4>
+		</div>
+	</div>
+</body>
+</html>
