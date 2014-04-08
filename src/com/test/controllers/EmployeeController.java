@@ -26,7 +26,6 @@ public class EmployeeController {
 	public void setEmployeeDao(EmployeeDao employeeDao) {
 		System.out.println("Employee dao has been set" + employeeDao);
 		this.employeeDao = employeeDao;
-		//System.out.println("Employee dao has been set" + this.employeeDao);
 	}
 
 	public EmployeeDao getEmployeeDao() {
@@ -37,26 +36,16 @@ public class EmployeeController {
 	public String showAddPage(){
 		System.out.println("hit!!");
 		return "redirect:/EmpData.html";
-		//return new ModelAndView("EmpData");
 	}
 	
 	@RequestMapping(value = "/getEmpName.html", method = RequestMethod.GET)
-//	@RequestMapping(value="/getEmpName.html" , method = RequestMethod.GET)
 	public @ResponseBody String getEmployeeName(@RequestParam(value="id", required=true) String id) throws JsonGenerationException, JsonMappingException, IOException{
 		System.out.println("ID IS:>>> " + id);
 		Employee lEmployee = getEmployeeDao().getStudent(Integer.parseInt(id));
 		System.out.println(lEmployee.getFirstName() + "  .... "+ lEmployee.getLastName());
 		ObjectMapper objectMapper = new ObjectMapper();  
 		return objectMapper.writeValueAsString(lEmployee);
-		//return null;
 		
 	}
 	
-	/*public static void main(String args[]){
-		EmployeeDao empd = new EmployeeDao();
-		
-		Employee e = empd.getStudent(2);
-		
-		System.out.println("Dta mila... "+ e.getFirstName());
-	}*/
 }
