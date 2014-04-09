@@ -5,6 +5,8 @@
 <title>Insert title here</title>
 <!-- <script type="text/javascript" src="js/jquery-1.11.0.js"></script>
  -->
+<link href="css/style.css" rel="stylesheet">
+
 <script src="js/angular.min.js"></script>
 <script src="js/empUtil.js"></script>
 </head>
@@ -12,11 +14,17 @@
 	<h3>Employee Sample Page</h3>
 	<div ng-controller="EmpCtrl">
 	
-	<!-- 	<form> -->
+		<form name="empForm" novalidate>
 			<input type="text" ng-model="empIdText" id="empId"
-				placeholder="Enter employee id here" /> <button ng-click="getDatafrmServer()" id="getDataBtn">Get Employee</button>
+				placeholder="Enter employee id here" name="empId" ng-required="true" ng-pattern="/^[0-9]{1}$/" /> 
+			
+      <span ng-show="empForm.empId.$error.required">Please enter Employee Id.</span>
+      <span ng-show="empForm.empId.$error.pattern">Employee Id has to be a valid number.</span>
+   
 				
-		<!-- </form> -->
+				<input type="submit" ng-click="getDatafrmServer()" id="getDataBtn" value="Get Employee Details" />
+				
+		</form>
 		<div ng-if="loadingIsDone">
 			<h4>{{content}}</h4>
 		</div>
