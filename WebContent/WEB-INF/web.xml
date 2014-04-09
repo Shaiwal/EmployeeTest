@@ -3,14 +3,14 @@
 	xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
 	id="WebApp_ID" version="2.5">
-	<display-name>EmployeeTest</display-name>
-	 <context-param>
+	<display-name>Employee-test</display-name>
+	<context-param>
 		<param-name>contextConfigLocation</param-name>
 		<param-value>
 			classpath:spring/config/ContextConfig.xml
     	</param-value>
 	</context-param>
- 	<listener>
+	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
 	<servlet>
@@ -27,7 +27,7 @@
 		<url-pattern>*.html</url-pattern>
 	</servlet-mapping>
 	<welcome-file-list>
-		<!-- <welcome-file>EmpData.html</welcome-file> -->
+		<welcome-file>employee.html</welcome-file>
 		<welcome-file>index.htm</welcome-file>
 		<welcome-file>index.jsp</welcome-file>
 		<welcome-file>default.html</welcome-file>
