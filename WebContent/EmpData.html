@@ -18,8 +18,8 @@
 			<input type="text" ng-model="empIdText" id="empId"
 				placeholder="Enter employee id here" name="empId" ng-required="true" ng-pattern="/^[0-9]{1}$/" /> 
 			
-      <span ng-show="empForm.empId.$error.required">Please enter Employee Id.</span>
-      <span ng-show="empForm.empId.$error.pattern">Employee Id has to be a valid number.</span>
+			<span ng-show="empForm.empId.$error.required">Please enter Employee Id.</span>
+			<span ng-show="empForm.empId.$error.pattern">Employee Id has to be a valid number.</span>
    
 				
 				<input type="submit" ng-click="getDatafrmServer()" id="getDataBtn" value="Get Employee Details" />
